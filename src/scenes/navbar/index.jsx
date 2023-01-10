@@ -38,7 +38,7 @@ const Navbar = () => {
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
-
+  //miracle bug!!! -> 2/9/2023
   const fullName = user && `${user.firstName} ${user.lastName}`;
   // if (user != null) {
   //   const fullName = `${user.firstName} ${user.lastName}`;
