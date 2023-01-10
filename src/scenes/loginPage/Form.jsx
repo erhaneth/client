@@ -27,7 +27,7 @@ const registerSchema = yup.object().shape({
 });
 
 const loginSchema = yup.object().shape({
-  email: yup.string().required("required"),
+  email: yup.string().email("invalid email").required("required"),
   password: yup.string().required("required"),
 });
 const initialValuesRegister = {
@@ -151,7 +151,7 @@ const Form = () => {
                   name="location"
                   error={Boolean(touched.location) && Boolean(errors.location)}
                   helperText={touched.location && errors.location}
-                  sx={{ gridColumn: "span 2" }}
+                  sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
                   label="Occupation"
@@ -162,11 +162,11 @@ const Form = () => {
                     Boolean(touched.occupation) && Boolean(errors.occupation)
                   }
                   helperText={touched.occupation && errors.occupation}
-                  sx={{ gridColumn: "span 2" }}
+                  sx={{ gridColumn: "span 4" }}
                 />
                 <Box
                   gridColumn="span 4"
-                  border={`{1px solid ${palette.neutral.medium}}`}
+                  border={`1px solid ${palette.neutral.medium}`}
                   borderRadius="5px"
                   p="1rem"
                 >
@@ -193,7 +193,7 @@ const Form = () => {
                             <EditOutlinedIcon />
                           </FlexBetween>
                         )}
-                      </Box>;
+                      </Box>
                     }}
                   </Dropzone>
                 </Box>
@@ -206,7 +206,7 @@ const Form = () => {
               name="email"
               error={Boolean(touched.email) && Boolean(errors.email)}
               helperText={touched.email && errors.email}
-              sx={{ gridColumn: "span 2" }}
+              sx={{ gridColumn: "span 4" }}
             />
             <TextField
               label="Password"
@@ -215,7 +215,7 @@ const Form = () => {
               name="password"
               error={Boolean(touched.password) && Boolean(errors.password)}
               helperText={touched.password && errors.password}
-              sx={{ gridColumn: "span 2" }}
+              sx={{ gridColumn: "span 4" }}
             />
           </Box>
           {/* Buttons */}
