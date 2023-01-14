@@ -74,6 +74,7 @@ const Form = () => {
       setPageType("login");
     }
   };
+  //Todo check if the end point correct
   const login = async (values, onSubmitProps) => {
     const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
@@ -170,14 +171,14 @@ const Form = () => {
                   borderRadius="5px"
                   p="1rem"
                 >
-                  <Dropzone
+                   <Dropzone
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
                     onDrop={(acceptedFiles) =>
                       setFieldValue("picture", acceptedFiles[0])
                     }
                   >
-                    {({ getRootProps, getInputProps }) => {
+                    {({ getRootProps, getInputProps }) => (
                       <Box
                         {...getRootProps()}
                         border={`2px dashed ${palette.primary.main}`}
@@ -194,7 +195,7 @@ const Form = () => {
                           </FlexBetween>
                         )}
                       </Box>
-                    }}
+                    )}
                   </Dropzone>
                 </Box>
               </>
