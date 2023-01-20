@@ -34,6 +34,25 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       getPosts();
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  return (
+    <>
+      {posts.map(({
+        _id,
+        userId,
+        firstName,
+        lastName,
+        description,
+        location,
+        picturePath,
+        userPicturePath,
+        likes,
+        comments,
+      }) => (
+        <PostWidget
+      )
+      )}
+    </>
+  );
 };
 
 export default PostsWidget;
