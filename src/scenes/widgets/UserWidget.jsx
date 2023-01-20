@@ -72,7 +72,8 @@ import {
               >
                 {firstName} {lastName}
               </Typography>
-              <Typography color={medium}>{friends.length} friends</Typography>
+              <Typography color={medium}>{friends.length}
+ friends</Typography>
             </Box>
           </FlexBetween>
           <ManageAccountsOutlined />
