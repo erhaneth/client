@@ -96,7 +96,6 @@ const Form = () => {
   const handleFormSubmit = async (values, onSubmitProps) => {
     if (isLogin) await login(values, onSubmitProps);
     if (isRegister) await register(values, onSubmitProps);
-    
   };
 
   return (
@@ -172,7 +171,7 @@ const Form = () => {
                   borderRadius="5px"
                   p="1rem"
                 >
-                   <Dropzone
+                  <Dropzone
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
                     onDrop={(acceptedFiles) =>
