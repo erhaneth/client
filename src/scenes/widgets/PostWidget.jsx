@@ -20,7 +20,7 @@ const PostWidget = ({
   location,
   picturePath,
   userPicturePath,
-  likes = {}, // added default value
+  likes,
   comments,
 }) => {
   const [isComments, setIsComments] = useState(false);
@@ -28,8 +28,7 @@ const PostWidget = ({
   const token = useSelector((state) => state.token);
   const loggedInUserId = useSelector((state) => state.user._id);
   const isLiked = Boolean(likes[loggedInUserId]);
-  //   const likeCount = Object.keys(likes).length;
-  const likeCount = likes ? Object.keys(likes).length : 0;
+  const likeCount = Object.keys(likes).length;
 
   const { palette } = useTheme();
   const main = palette.neutral.main;
